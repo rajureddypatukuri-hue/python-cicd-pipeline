@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-
         stage('Checkout') {
             steps {
-                echo 'Downloading source code from GitHub'
+                echo 'Downloading code from GitHub'
                 checkout scm
             }
         }
@@ -13,14 +12,14 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing Python dependencies'
-                bat 'python -m pip install -r requirements.txt'
+                bat '"C:/Users/rajur/AppData/Local/Programs/Python/Python313/python.exe" -m pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Running Python tests'
-                bat 'python -m pytest -v'
+                bat '"C:/Users/rajur/AppData/Local/Programs/Python/Python313/python.exe" -m pytest -v'
             }
         }
 
